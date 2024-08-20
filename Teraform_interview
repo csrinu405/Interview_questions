@@ -1,0 +1,31 @@
+Docker image = Bare mim os + App run time + system packages and dependencies+App code and is portable in nature
+Bare min os = no unnecassary packages
+Docker image is static file
+Docker container is running instance of Docker image
+Install docker it will create a group docker, users who are in this group or root user can only run docker commands
+usermod -aG docker <username> -> to add user to docker group
+docker images - list docker images
+docker pull nginx -> First it will check for local repo if not it will pull from docker hub
+username, image name and version
+joindevops/catalogue:1.0.0
+seenu/catalogue:1.0.0
+for official image it would be nginx:latest or nginx:1.0.0
+docker create <image>:tag -> to create a container
+docker ps -a
+docker start <CID>
+docker stop <CID>
+docker rm <CID>
+docker images
+docker rmi <image id>
+how can you access docker container from internet?
+It can be accessed by Enabling the port, we need to open host port that can redirect traffic to container
+docker run -d -p <host-port>:<container-port>
+host port can be any port but container port should be default
+how to get terminal access to running container
+docker -exec -it <container-id> bash
+docker inspect cid/image-id
+docker logs <CID>
+Dockerfile -> It is declarative way of creating custom images
+Dockerfile will keep all instructions in a file called as dockerfile and build the container
+Teraform is declarative, what you write you get it
+docker build -t url/username/image-name:tag .
